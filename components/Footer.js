@@ -26,10 +26,10 @@ function Footer() {
         </ul>
 </div>
     <ul className='flex gap-4'>
-      <Link href={"/"}><li><Image className='invert-100' src="/insta.svg" width={20} height={20} alt='social-media-icon'/></li></Link>  
-      <Link href={"/"}><li><Image className='invert-100' src="/facebook.svg" width={20} height={20} alt='social-media-icon'/></li></Link>  
-      <Link href={"/"}><li><Image className='invert-100' src="/tiktok.svg" width={20} height={20} alt='social-media-icon'/></li></Link>  
-      <Link href={"/"}><li><Image className='invert-100' src="/mail.svg" width={35} height={35} alt='social-media-icon'/></li></Link>  
+      <Link href={"https://www.instagram.com/change_brings_comfort/"}><li><Image className='invert-100' src="/insta.svg" width={20} height={20} alt='social-media-icon'/></li></Link>  
+      <Link href={"https://web.facebook.com/profile.php?id=61583449036493"}><li><Image className='invert-100' src="/facebook.svg" width={20} height={20} alt='social-media-icon'/></li></Link>  
+      <Link href={"https://www.tiktok.com/@change_brings_comfort/"}><li><Image className='invert-100' src="/tiktok.svg" width={20} height={20} alt='social-media-icon'/></li></Link>  
+      <Link href={"mailto:changebringscomfort@gmail.com"}><li><Image className='invert-100' src="/mail.svg" width={35} height={35} alt='social-media-icon'/></li></Link>  
     </ul>
       </div>
     
