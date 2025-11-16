@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import React from 'react'
 import { useRouter } from 'next/navigation'
-import { toast , ToastContainer } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 import { signIn } from 'next-auth/react'
 import { useEffect } from 'react'
 import { useSession } from 'next-auth/react'
@@ -13,35 +13,36 @@ function Signup() {
     const [verification, setverification] = useState(false)
     const router = useRouter()
 
-    
-    const {data : session , status} = useSession()
-    
+
+    const { data: session, status } = useSession()
+
     useEffect(() => {
-      if (status !== "loading" && session) router.push("/");
+        if (status !== "loading" && session) router.push("/");
     }, [session, status, router]);
     if (status === "loading") return <Loader />;
     async function sendOtp(email) {
         try {
             const res = await fetch("/api/auth/send-otp", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email }),
-        });
-        return res.json(); 
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
+            return res.json();
+        
         } catch (error) {
             toast.error("Failed to verify your Email. Please try again.");
         }
     }
 
-const handlegooglesignup = () => { 
-    try {
-        
-        signIn("google", { callbackUrl: "/" });
-    } catch (error) {
-        console.error(error)
+    const handlegooglesignup = () => {
+        try {
+
+            signIn("google", { callbackUrl: "/" });
+        } catch (error) {
+            console.error(error)
+        }
+
     }
-    
-}
     const emailchecker = () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
@@ -53,21 +54,20 @@ const handlegooglesignup = () => {
             seterror("Email is required")
             setverification(false)
             return;
-        } 
-         if (!emailchecker()) {
-             seterror("Please enter a valid email")
-             setverification(false)
-                return;
-            } 
-setverification(true)
-            const data = await sendOtp(email)
-
-         if (data.success) {
+        }
+        if (!emailchecker()) {
+            seterror("Please enter a valid email")
+            setverification(false)
+            return;
+        }
+        setverification(true)
+        const data = await sendOtp(email)
+        if (data.success) {
             router.push(`/signup/verify/${encodeURIComponent(email)}`);
             setverification(true)
-        }else{
+        } else {
             setverification(false)
-            seterror(data.error || "Failed to verify your Email. Please try again.")
+            seterror("Failed to verify your Email. Please try again.")
         }
     }
     return (
@@ -78,7 +78,7 @@ setverification(true)
             <div className='flex w-full justify-center items-center'>
 
                 <button
-                    onClick={handlegooglesignup} className="flex items-center bg-[rgba(255,255,255,0.5)] w-[40%] justify-center text-black border border-gray-300 rounded-lg shadow-md  px-6 py-2 text-xl font-medium hover:bg-white active:scale-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
+                    onClick={handlegooglesignup} className="flex items-center bg-[rgba(255,255,255,0.5)] w-[90%] md:w-[40%] justify-center text-black border border-gray-300 rounded-lg shadow-md  px-6 py-2 text-xl font-medium hover:bg-white active:scale-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
                     <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                         viewBox="-0.5 0 48 48" version="1.1">
 
@@ -107,12 +107,12 @@ setverification(true)
             <div className='mt-10 w-full flex flex-col justify-center items-center gap-4'>
                 <span className='text-lg font-semibold'>Contine With Email</span>
                 <form onSubmit={handleSubmit} className='w-full flex gap-6 justify-center items-center flex-col'>
-                    <input type="text" onChange={(e) => setemail(e.target.value)} className='outline-2 text-gray-900  outline-gray-700 focus:outline-black rounded-lg  w-[40%]' placeholder='Enter your Email' />
+                    <input type="text" disabled={verification} onChange={(e) => setemail(e.target.value)} className='outline-2 text-gray-900  outline-gray-700 focus:outline-black rounded-lg w-[90%] md:w-[40%]' placeholder='Enter your Email' />
                     <button
-  disabled={verification}
-  type="submit"
-  className={`bg-black px-2 py-1 rounded-full ${verification ? "opacity-60 cursor-not-allowed" : ""}`}
->Submit</button>
+                        disabled={verification}
+                        type="submit"
+                        className={`bg-black px-2 py-1 rounded-full ${verification ? "opacity-60 cursor-not-allowed" : ""}`}
+                    >Submit</button>
                     {error && <span className="text-red-500 p-1 text-md">{error}</span>}
                     {verification && !error && (
                         <span className="text-md">Verifying your email...</span>
@@ -120,14 +120,14 @@ setverification(true)
                 </form>
             </div>
             <ToastContainer
-             position="top-right"
-              autoClose={3000}
-               hideProgressBar={false}
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
                 newestOnTop={false}
-                 closeOnClick rtl={false}
-                  pauseOnFocusLoss
-                   draggable
-                    pauseOnHover />
+                closeOnClick rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover />
         </div>
     )
 }

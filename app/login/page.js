@@ -76,7 +76,7 @@ if (status === "loading") return <Loader />;
 <div className='text-4xl text-center font-bold my-4'>Login to continue</div>
         <div className='flex w-full justify-center items-center'>
 
-          <button onClick={()=>signIn("google",{callback : "/"})} className="flex items-center bg-[rgba(255,255,255,0.5)] w-[40%] justify-center text-black border border-gray-300 rounded-lg shadow-md  px-6 py-2 text-xl font-medium hover:bg-white active:scale-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
+          <button onClick={()=>signIn("google",{callback : "/"})} className="flex items-center bg-[rgba(255,255,255,0.5)] md:w-[40%] w-[90%] justify-center text-black border border-gray-300 rounded-lg shadow-md  px-6 py-2 text-xl font-medium hover:bg-white active:scale-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
             <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="-0.5 0 48 48" version="1.1">
 
@@ -106,9 +106,9 @@ if (status === "loading") return <Loader />;
         <div className='mt-10 w-full flex flex-col justify-center items-center gap-4'>
           <span className='text-lg font-semibold'>Contine With Email</span>
           <form onSubmit={handlelogin} className='w-full flex gap-6 justify-center items-center flex-col'>
-            <input type="text" onChange={(e) => setemail(e.target.value)} className='outline-2 text-gray-900  outline-gray-700 focus:outline-black rounded-lg  w-[40%]' placeholder='Enter your Email' />
+            <input type="text" onChange={(e) => setemail(e.target.value)} className='outline-2 text-gray-900  outline-gray-700 focus:outline-black rounded-lg w-[90%] md:w-[40%]' placeholder='Enter your Email' />
             <div className='flex gap-2 justify-center w-full items-center'>
-              <input onChange={(e) => setpassword(e.target.value)} className='outline-2 text-gray-900 bg-white  outline-gray-700 focus:outline-black rounded-lg  w-[40%]' placeholder='Enter Password' type={visibilityword === "visibility" ? "text" : "password"} /><span onClick={changevisibility} className="material-symbols-outlined relative text-black bg-white active:scale-95 rounded-full p-1 h-fit w-fit cursor-pointer">
+              <input onChange={(e) => setpassword(e.target.value)} className='outline-2 text-gray-900 bg-white  outline-gray-700 focus:outline-black rounded-lg w-[90%] md:w-[40%]' placeholder='Enter Password' type={visibilityword === "visibility" ? "text" : "password"} /><span onClick={changevisibility} className="material-symbols-outlined relative text-black bg-white active:scale-95 rounded-full p-1 h-fit w-fit cursor-pointer">
                 {visibilityword}
 
               </span>

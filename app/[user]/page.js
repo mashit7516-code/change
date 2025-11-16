@@ -94,7 +94,7 @@ if(result.success){
       <div className="mt-30 flex flex-col gap-2 justify-center items-center">
         <span className="text-5xl font-bold text-center">Hi, {decodeURIComponent(user)}</span>
         <span className="w-[50%] text-center">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas praesentium at ipsum? Corporis et, nulla veritatis quod voluptates atque sint magni voluptate reprehenderit. Eligendi corporis nihil voluptatibus velit, neque ad.
+          Welcome to our website. Here You will find Your Cart's product. Please CheckOut to forward.
         </span>
       </div>
 
@@ -135,11 +135,6 @@ if(result.success){
     </div>
   </div>}
         </div>
-      </div>
-
-      <div className="flex flex-col justify-center w-full items-start">
-        <span className="text-3xl ml-10 font-bold">Orders</span>
-        <div></div>
       </div>
     </div>
   );

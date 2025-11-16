@@ -26,7 +26,7 @@ export default function Carousel() {
   const prevSlide = () => setCurrent((current - 1 + length) % length);
 
   return (
-    <div className="relative w-[80%] mx-auto h-64 md:h-96 overflow-hidden rounded-xl border border-gray-800 bg-[rgba(255,255,255,0.05)] backdrop-blur-sm">
+    <div className="relative w-screen mx-auto h-64 md:h-96 overflow-hidden rounded-xl border border-gray-800 bg-[rgba(255,255,255,0.05)] backdrop-blur-sm">
       {/* Images */}
       <div
         className="flex transition-transform duration-700 ease-in-out"

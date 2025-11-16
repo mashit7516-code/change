@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 function Footer() {
   return (
-    <div className='bg-black w-full p-8 flex justify-center items-center gap-4 flex-col text-gray-400' >
+    <div className='bg-black mt-10 pr-0 max-w-screen p-8 flex justify-center items-center m-0  gap-4 flex-col text-gray-400' >
       <span>Copyright © 2025 Change. All rights reserved.</span>
       <span>Made with &hearts; by Ali Hassan</span>
         
