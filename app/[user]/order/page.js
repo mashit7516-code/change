@@ -187,7 +187,7 @@ COD (Cash on delivery)
   Delivery Fee : PKR 300/-
   <div>
     Payemnt Instruction:
-    Pay the amount with help of QR Code Goven Below. After your payment is done. You will get an Transiction ID. Enter Transaction ID to confirm your order. After verifying your Transaction ID You will receive an Email from us that your order is placed successfully and you will receive the anticipated date of order arrival in the Email.
+    Pay the amount with help of Number 03037833380 . Name : Amna Bashir. After your payment is done. You will get an Transiction ID. Enter Transaction ID to confirm your order. After verifying your Transaction ID You will receive an Email from us that your order is placed successfully and you will receive the anticipated date of order arrival in the Email.
   </div>
    <div className='flex flex-col'>
               <label >Transaction ID</label>
