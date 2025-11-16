@@ -6,6 +6,7 @@ import { Poppins } from "next/font/google";
 import Silk from "@/components/Silk";
 import Provider from "@/components/Provider";
 
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -35,26 +36,30 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
           rel="stylesheet"
         />
+        
       </head>
+<body
+  className={`${poppins.variable} text-white bg-[#008f00] font-sans flex flex-col min-h-screen`}
+>
+  <Provider>
+    {/* Background */}
+    <div className="fixed inset-0 -z-10">
+      <Silk speed={20} scale={1} color="#059e00" noiseIntensity={1.5} rotation={0} />
+    </div>
 
-      <body className={`${poppins.variable} text-[#ffffff]  bg-[#008f00]    font-sans relative min-h-screen`}>
-        <Provider>
-      
-        <div className="fixed inset-0 -z-10">
-          <Silk
-            speed={20}
-            scale={1}
-            color="#059e00"
-            noiseIntensity={1.5}
-            rotation={0}
-          />
-        </div>
-        <NavBAr />
-        <main className="relative z-10 min-h-screen">{children}</main>
-        <Footer />
-        </Provider>
-      </body>
+    {/* Header */}
+    <NavBAr />
+
+    {/* Main content grows to fill space */}
+    <main className="relative z-10 flex-grow">
+      {children}
+    </main>
+
+    {/* Footer always at the bottom */}
+    <Footer />
+  </Provider>
+</body>
+
     </html>
   );
 }
-

@@ -14,9 +14,9 @@ const images = [
 ];
 
   return (
-  <div className=" h-[240vh] md:h-auto">
+  <div className=" md:h-auto">
       
-    <section className="min-h-[95vh] max-h-fit flex flex-col sm:flex-row gap-10">
+    <section className="md:min-h-[95vh] max-h-fit flex flex-col sm:flex-row gap-10">
       <div className="flex flex-col sm:mt-0 mt-14  gap-4 justify-center  items-center h-full">
        
         <div className="flex gap-8  justify-center items-center mt-30">
@@ -43,8 +43,8 @@ cardsData={images}
 />
 </div>
     </section>
-    <div className="h-1 bg-black w-full hidden md:block sm:my-18"></div>
-    <section className="my-4 relative ">
+    <div className="h-1 bg-black w-full hidden md:block "></div>
+    <section className="my-4 relative h-fit sm:min-h-screen">
       <div className="text-4xl font-bold text-center text-black my-4">What's New</div>
             <Carousel/>
             <div className="text-center  text-white font-bold mt-6"><Link className="bg-black px-2 py-1 rounded-full text-lg" href={"/"}>Learn More</Link></div>
