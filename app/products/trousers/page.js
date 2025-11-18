@@ -110,7 +110,7 @@ function Page() {
                     </div>
                     <div className="products m-2 border-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border-2 rounded-lg bg-[rgba(255,255,255,0.2)] p-4">
                         {product.map((item, index) => (
-                            <Link href={`/products/trousers/${item._id}`} key={item._id || item.id || index} className="border rounded-lg p-4 bg-[rgba(255,255,255,0.2)]">
+                            <Link href={`/products/trousers/${item._id}`} key={item._id || item.id || index} className="border rounded-lg p-4 bg-[rgba(0,0,0,0.2)]">
                                 <div className="image">
                                     <Image 
                                         width={200} 

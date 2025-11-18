@@ -28,19 +28,20 @@ export default function RootLayout({ children }) {
         
       </head>
 <body
-  className={`${poppins.variable} text-white bg-[#008f00] font-sans flex flex-col min-h-screen`}
+  className={`${poppins.variable} text-white bg-[url("/bg.png")] font-sans flex flex-col min-h-screen`}
 >
+  {/* bg-[#008f00] */}
   <Provider>
     {/* Background */}
-    <div className="fixed inset-0 -z-10">
+    {/* <div className="fixed inset-0 -z-10">
       <Silk speed={20} scale={1} color="#059e00" noiseIntensity={1.5} rotation={0} />
-    </div>
+    </div> */}
 
     {/* Header */}
     <NavBAr />
 
     {/* Main content grows to fill space */}
-    <main className="relative z-10 flex-grow">
+    <main className="relative z-10 grow">
       {children}
     </main>
 

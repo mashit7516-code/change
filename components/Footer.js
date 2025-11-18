@@ -14,7 +14,7 @@ function Footer() {
           <li><Link href={"/products/shirts"} >Shirts</Link></li>
           <li><Link href={"/products/pants"} >Pants</Link></li>
           <li><Link href={"/products/hoodies"} >Hoodies</Link></li>
-          <li><Link href={"/products/trouser"} >Trousers</Link></li>
+          <li><Link href={"/products/trousers"} >Trousers</Link></li>
         </ul>
         <ul>
           <li><Link href={"/signup"} >Sign Up</Link></li>

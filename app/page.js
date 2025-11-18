@@ -32,7 +32,7 @@ export default function Home() {
       <section className="md:min-h-[95vh]  flex flex-col sm:flex-row gap-10 px-4 sm:px-10">
         <div className="flex flex-col justify-center items-center sm:items-start gap-4 mt-14 sm:mt-0 text-center sm:text-left">
           <h1 className="text-7xl sm:text-9xl mt-30 font-bold">Change</h1>
-          <h2 className="text-2xl sm:text-3xl font-semibold mt-2">Brings Comfort</h2>
+          <h2 className="text-2xl sm:text-3xl font-semibold mt-2 typing-text">Brings Comfort</h2>
           <p className="sm:w-[50vw] w-full sm:text-xl text-lg mt-2">
             At Change – Brings Comfort, we believe small changes create big comfort. Our store brings thoughtfully selected products that enhance your daily routine with ease and elegance.
           </p>
@@ -58,7 +58,6 @@ export default function Home() {
 
       {/* Divider */}
       <div className="h-1 bg-black w-full my-4"></div>
-
       {/* What's New Section */}
       <section className="my-4 relative min-h-[50vh] sm:min-h-screen px-4 sm:px-10">
         <h2 className="text-4xl font-bold text-center text-black my-4">What's New</h2>
@@ -81,7 +80,7 @@ export default function Home() {
             { title: "Shirts", img: "/shirts.png", href: "/products/shirts", desc: "Our shirts are crafted for effortless everyday style — soft, breathable, and perfectly tailored. At Change – Brings Comfort, every shirt is designed to keep you confident, comfortable, and ready for any moment." },
             { title: "Hoodies", img: "/hoodies.png", href: "/products/hoodies", desc: "Soft, cozy, and built for everyday wear — our hoodies deliver warmth with a clean modern style. Change – Brings Comfort makes sure you feel relaxed, confident, and comfortable wherever you go." },
             { title: "Pants", img: "/pants.png", href: "/products/pants", desc: "Made for movement and all-day ease, our pants combine modern fits with durable, light-weight fabrics. Experience comfort without losing the clean look you want — only at Change – Brings Comfort." },
-            { title: "Trousers", img: "/trouser.png", href: "/products/trouser", desc: "Our trousers bring a polished yet relaxed feel. Designed with premium stitching, smooth fabric, and a fit that stays sharp — Change ensures comfort meets class in every pair." },
+            { title: "Trousers", img: "/trousers.png", href: "/products/trousers", desc: "Our trousers bring a polished yet relaxed feel. Designed with premium stitching, smooth fabric, and a fit that stays sharp — Change ensures comfort meets class in every pair." },
           ].map((product) => (
             <div
               key={product.title}
