@@ -1,5 +1,6 @@
 import "./globals.css";
 import NavBAr from "../components/NavBAr";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Footer from "@/components/Footer";
 import { Poppins } from "next/font/google";
 import Silk from "@/components/Silk";
