@@ -1,4 +1,5 @@
-export const runtime = "nodejs"; //
+// Force Node runtime — critical for Vercel builds
+export const runtime = "nodejs";
 
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
@@ -7,7 +8,7 @@ import connectDB from "@/lib/mongodb";
 import User from "@/models/User";
 import bcrypt from "bcrypt";
 
-
+// Export handlers for [...nextauth]/route.js
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     // ✅ Google Login
@@ -24,7 +25,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
+        if (!credentials?.email || !credentials?.password) {
+          throw new Error("Missing credentials");
+        }
+
+        // Connect to MongoDB at runtime only
         await connectDB();
+
         const user = await User.findOne({ email: credentials.email });
         if (!user) throw new Error("User not found");
 
@@ -34,19 +41,19 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         return {
           id: user._id.toString(),
           email: user.email,
-          name: user.email.split("@")[0],
+          name: user.username || user.email.split("@")[0],
         };
       },
     }),
   ],
 
   callbacks: {
-    // Called after successful sign-in (Google or Credentials)
-    async signIn({ user, account }) {
+    // Called after successful sign-in
+    async signIn({ user }) {
       try {
         await connectDB();
-        const existingUser = await User.findOne({ email: user.email });
 
+        const existingUser = await User.findOne({ email: user.email });
         if (!existingUser) {
           await User.create({
             email: user.email,
@@ -61,7 +68,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       }
     },
 
+    // Populate session with DB user info
     async session({ session }) {
+      if (!session?.user?.email) return session;
+
       await connectDB();
       const dbUser = await User.findOne({ email: session.user.email }).lean();
 
