@@ -5,6 +5,8 @@ import connectDB from "@/lib/mongodb";
 import User from "@/models/User";
 import bcrypt from "bcrypt";
 
+export const runtime = "nodejs"; //
+
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     // ✅ Google Login

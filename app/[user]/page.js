@@ -62,7 +62,7 @@ const requestOptions = {
   redirect: "follow"
 };
 
-const res = await fetch("http://localhost:3000/api/cart/remove", requestOptions)
+const res = await fetch("/api/cart/remove", requestOptions)
 const result = await res.json()
 if(result.success){
   toast.success("Deleted Successfully!")

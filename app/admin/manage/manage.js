@@ -293,7 +293,7 @@ useEffect(() => {
         }
       </section>
       <div className="h-1 bg-black w-full "></div>
-      <section id="order my-4">
+      <section id="order" className="my-4">
         <div>{ order.length == 0 ? <div>No Order Found</div> : 
 
   <div className=" w-screen">
@@ -313,7 +313,7 @@ useEffect(() => {
         ))}
 
         <p>Total: {o.totalAmount}</p>
-        <p>Status: {o.status}</p>
+        <span onClick={()=>handledeleteorder(o._id)} className="material-symbols-outlined cursor-pointer active:scale-95">delete</span>
       </div>
     ))}
   </div>
